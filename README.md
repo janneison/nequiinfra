@@ -30,19 +30,26 @@ El siguiente diagrama ilustra la propuesta para el despliegue de infraestructura
 
 
 ## Arquitectura de referencia
-El siguiente diagrama de aplicacion ilustra el micro servicio para configurar estados por entidad, sus reglas y sus posibles estados.
+El siguiente diagrama ilustra la arquitectura de referencia propuestas, sugiere los servicios a usar y la forma como deberian interactuar, se intenctan usar la mayor parte de la arquitectura con servicios serverless.
 
-![](img/ms-configuration.png)
+![](img/arquitectura-de-referencia.png)
 
-El siguiente diagrama de clases ilustra a manera general como deberia funcionar la libreria.
+- FrontEnd: Se sugiere desplegarla con s3, tambien se podria utilizar amplify para desplegarlo, en este caso sugerimos un bucket para sitios web estaticos, con el objetivo de usar un servicio serverless y de igual manera en el punto anterior se presento una propuesta de despliegue continuo por tal motivo obviamos amplify, adicionalmente se usara cloudfront para entregar el contenido de la app web.
+- Apigateway: Se utilizara para entregar las api de los servicios expuestos ya sea por EKS, lambda, un servicio que aun no se migre del monolito, de igual manera se utilizara la funcion de autorizador para utilizar la autenticacion existente.
+- Microservicios: Se orquestaran en kubernetes y adicionalmente los exporadicos se sugiere convertirlos en aws lambdas.
+- Eventos: El diagrama muestra los tipos de eventos sugeridos eventbrigde y SNS.
+- Cloudwacth: aqui manejaremos los logs.
+- Almacenamiento: aqui observamos los 4 tipos de almacenamiento que seran usados dependiendo del caso de uso.
+- Seguridad: Se usuara kms para guardar certificados de seguridad, secret manager para los secretos y waf para la seguridad perimetral.
 
-![](img/diagram-clases.png)
+
 
 ## conclusiones
 
+El diagrama y la arquitectura se debe complementar al revisar el sistema actual y el roadmap de mejoras.
 
-El siguiente diagrama ilustra una propuesta a manera de arquitectura de solucion para un api y/o sdk para el manejo de la maquina de estados utilizando la propuesta de base de datos y que todas las funciones las entregue por una api.
+Al momento de migrar se puede utilizar aws database migrations, de igual manera se puede conseguir un mecanismo de change data capture para en caso de tener una estrategia que libere entregas de valor parciales y no se realice un bigbang y apoyarse en apigateway para que convivan por algun tiempo ambos sistemas.
 
-![](img/maquina-estados-2.png)
+Por ultimo es importante analizar si ya se tienen otras cuentas en AWS y/o si algun sistema al que se conecte la aplicacion tiene alguna restriccion lo cual nos obligaria a usar manejo especial en las redes.
 
 
