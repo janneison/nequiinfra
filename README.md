@@ -1,5 +1,5 @@
 <a href="https://github.com/janneison">
-   <img src="https://github.com/janneison/bvcstate/blob/main/img/bvc.jpg" alt="eShop logo" title="eShopOnContainers" align="right" height="60" />
+   <img src="https://assets-global.website-files.com/6317a229ebf7723658463b4b/631b991aff307a018c353dcd_Logo-Nequi.svg" alt="janneison" title="janneison" align="right" height="60" />
 </a>
 
 # Prueba Tecnica Nequi
