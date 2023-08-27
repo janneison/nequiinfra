@@ -13,10 +13,10 @@ El problema plantea una arquitectura con una aplicacion monolitica en uno o vari
 
 ![](img/actual.png)
 
-## Arquitectura de Contenedor
-El siguiente diagrama nos ilustra la propuesta que se compone de una libreria para la implementacion de la maquina de estados y un microservicio de configuracion para hacer dinamica la parametrizacion de estados y sus  acciones
+## Manejo de cuentas
+Como primera medida se sugiere el uso de aws organizations para gestionar las cuentas y de ser posible utilizar single sign on para disminuir la administracion de usuarios y evitar que el usuario deba conocer muchas contraseñas.
 
-![](img/diagrama-de-contenedor.png)
+![](img/cuentas.png)
 
 ## Arquitectura de Datos
 
