@@ -11,7 +11,7 @@ En esta documentacion se resuleve la prueba tecnica para el cargo de Arquitecto 
 El problema plantea una arquitectura con una aplicacion monolitica en uno o varios servidores y una persistencia local. El siguiente diagrama ilustra de forma simplificada la arquitectura actual
 
 
-![](img/actual)
+![](img/actual.png)
 
 ## Arquitectura de Contenedor
 El siguiente diagrama nos ilustra la propuesta que se compone de una libreria para la implementacion de la maquina de estados y un microservicio de configuracion para hacer dinamica la parametrizacion de estados y sus  acciones
