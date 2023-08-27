@@ -18,23 +18,18 @@ Como primera medida se sugiere el uso de aws organizations para gestionar las cu
 
 ![](img/cuentas.png)
 
-## Arquitectura de Datos
+## Arquitectura para el manejo de devops
 
-El siguiente diagrama ilustra la persistencia necesaria para manejar la maquina de estados finitos.
+El siguiente diagrama ilustra la propuesta para el despliegue de infraestructura y el despliegues continuo de las palicaciones
 
-![](img/diagrama-de-datos.png)
+![](img/devops.png)
 
-- Entidad: Es la lista de clases y/o tipos de objectos posibles.
-- Estados: Es la lista de estados definidos por entidad.
-- TipoEstados: Esta tabla nos sirve para indicar si el estado es el inicial, por defecto, final o algun otro tipo que no visualizemos actualmente.
-- EstadosPosibles: Es la lista de estados posible por estado, es decir de donde a donde puedo pasar.
-- TipoDisparador: Esta tabla puede ser util para no solo ejecutar metodos sino tambien, llamar un webservice, lanzar un evento.Etc
-- Reglas: Aqui se configura el estado inicial y el estado final.
-- EstadosObjectos: Aqui se persiste el estado del objecto.
-- HistoricosEstados: Aqui se guardan los estados por los que ha pasado el obejcto.
+- Github: Representa el versionador de codigo fuente(puede ser cualquiera basado en git).
+- Terraform: Para la construccion de la infraestructura como codigo, de igual manera usara un bucket de s3 para el manejo del estado de la infraestructura.
+- Pipeline: se requieren pipeline para desplegar tanto la infraestructura asi como para desplegar en EKS, Lambda y/o s3.
 
 
-## Modelo de Clases
+## Arquitectura de referencia
 El siguiente diagrama de aplicacion ilustra el micro servicio para configurar estados por entidad, sus reglas y sus posibles estados.
 
 ![](img/ms-configuration.png)
@@ -43,7 +38,7 @@ El siguiente diagrama de clases ilustra a manera general como deberia funcionar 
 
 ![](img/diagram-clases.png)
 
-## Propuesta de arquitectura orientada a Api y SDK
+## conclusiones
 
 
 El siguiente diagrama ilustra una propuesta a manera de arquitectura de solucion para un api y/o sdk para el manejo de la maquina de estados utilizando la propuesta de base de datos y que todas las funciones las entregue por una api.
