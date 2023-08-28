@@ -44,7 +44,7 @@ El siguiente diagrama ilustra la arquitectura de referencia propuestas, sugiere 
 
 
 
-## conclusiones
+## Conclusiones
 
 El diagrama y la arquitectura se debe complementar al revisar el sistema actual y el roadmap de mejoras.
 
