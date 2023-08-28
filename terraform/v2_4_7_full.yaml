@@ -801,7 +801,7 @@ spec:
     spec:
       containers:
       - args:
-        - --cluster-name=tf-fourier-platform-ekscluster-qa
+        - --cluster-name=nequi-platform-ekscluster
         - --ingress-class=alb
         image: public.ecr.aws/eks/aws-load-balancer-controller:v2.4.7
         livenessProbe:

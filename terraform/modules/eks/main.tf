@@ -299,7 +299,7 @@ output "aws_load_balancer_controller_role_arn" {
 }
 
 resource "helm_release" "aws-load-balancer-controller" {
-  name = "aws-load-balancer-controller-fourier-platform"
+  name = "aws-load-balancer-controller-nequi-platform"
   repository = "https://aws.github.io/eks-charts"
   chart      = "aws-load-balancer-controller"
   namespace  = "kube-system"
